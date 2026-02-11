@@ -15,7 +15,7 @@ ninja>=1.11.1
 numpy==2.1
 omegaconf>=2.3.0
 onnxruntime
-open-clip-torch>=2.20.0
+open-clip-torch==2.24.0
 opencv-python==4.6.0.66
 pandas>=2.0.3
 pillow>=9.5.0
