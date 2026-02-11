@@ -48,4 +48,4 @@ gradio
 streamlit-keyup
 
 # The package itself
--e .
+.
