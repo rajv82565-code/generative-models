@@ -9,7 +9,7 @@ torchvision>=0.15.2
 torchaudio>=2.0.2
 
 # Repository dependencies
-clip @ git+https://github.com/openai/CLIP.git
+open-clip-torch
 einops
 fairscale
 fire
