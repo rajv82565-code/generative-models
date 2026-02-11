@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.getcwd())
+
 from pytorch_lightning import seed_everything
 
 from scripts.demo.streamlit_helpers import *
