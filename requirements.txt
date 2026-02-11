@@ -47,5 +47,4 @@ webdataset
 gradio
 streamlit-keyup
 
-# The package itself
-.
+# Dependencies complete
