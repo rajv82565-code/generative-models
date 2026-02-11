@@ -1,4 +1,5 @@
 import math
+import os
 from contextlib import nullcontext
 from functools import partial
 from typing import Dict, List, Optional, Tuple, Union
@@ -257,8 +258,9 @@ class FrozenT5Embedder(AbstractEmbModel):
         self, version="google/t5-v1_1-xxl", device="cuda", max_length=77, freeze=True
     ):  # others are google/t5-v1_1-xl and google/t5-v1_1-xxl
         super().__init__()
-        self.tokenizer = T5Tokenizer.from_pretrained(version)
-        self.transformer = T5EncoderModel.from_pretrained(version)
+        hf_token = os.environ.get("HF_TOKEN")
+        self.tokenizer = T5Tokenizer.from_pretrained(version, token=hf_token)
+        self.transformer = T5EncoderModel.from_pretrained(version, token=hf_token)
         self.device = device
         self.max_length = max_length
         if freeze:
@@ -299,8 +301,9 @@ class FrozenByT5Embedder(AbstractEmbModel):
         self, version="google/byt5-base", device="cuda", max_length=77, freeze=True
     ):  # others are google/t5-v1_1-xl and google/t5-v1_1-xxl
         super().__init__()
-        self.tokenizer = ByT5Tokenizer.from_pretrained(version)
-        self.transformer = T5EncoderModel.from_pretrained(version)
+        hf_token = os.environ.get("HF_TOKEN")
+        self.tokenizer = ByT5Tokenizer.from_pretrained(version, token=hf_token)
+        self.transformer = T5EncoderModel.from_pretrained(version, token=hf_token)
         self.device = device
         self.max_length = max_length
         if freeze:
@@ -349,8 +352,9 @@ class FrozenCLIPEmbedder(AbstractEmbModel):
     ):  # clip-vit-base-patch32
         super().__init__()
         assert layer in self.LAYERS
-        self.tokenizer = CLIPTokenizer.from_pretrained(version)
-        self.transformer = CLIPTextModel.from_pretrained(version)
+        hf_token = os.environ.get("HF_TOKEN")
+        self.tokenizer = CLIPTokenizer.from_pretrained(version, token=hf_token)
+        self.transformer = CLIPTextModel.from_pretrained(version, token=hf_token)
         self.device = device
         self.max_length = max_length
         if freeze:
