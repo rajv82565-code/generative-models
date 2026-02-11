@@ -1,12 +1,12 @@
 # Essential tools for installation
-setuptools
+setuptools>=68.0.0
 wheel
 pip>=24.0
 
 # Core dependencies for SDXL/SVD demo
-torch>=2.0.1
-torchvision>=0.15.2
-torchaudio>=2.0.2
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
 
 # Repository dependencies
 open-clip-torch
@@ -29,7 +29,7 @@ opencv-python-headless
 pandas
 pillow
 pudb
-pytorch-lightning==2.0.1
+pytorch-lightning>=2.1.0
 pyyaml
 rembg
 scipy
