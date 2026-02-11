@@ -9,7 +9,7 @@ torchvision>=0.16.0
 torchaudio>=2.1.0
 
 # Repository dependencies
-open-clip-torch
+clip @ git+https://github.com/openai/CLIP.git
 einops
 fairscale
 fire
@@ -24,7 +24,6 @@ ninja
 numpy<2.0.0
 omegaconf
 onnxruntime
-open-clip-torch
 opencv-python-headless
 pandas
 pillow
